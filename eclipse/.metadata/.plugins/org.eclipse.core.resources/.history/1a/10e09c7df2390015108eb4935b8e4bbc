@@ -1,0 +1,14 @@
+package com.goku9616.TrollCraftREMAKE.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class TrollCoalOre extends Block{
+	public TrollCoalOre(){
+		super(Material.rock);
+		setBlockName("TrollCoalOre");
+		setHardness(3F);
+		setHarvestLevel("pickaxe", 0);
+		this.setBlockTextureName("minecraft:coal_ore");
+	}
+}

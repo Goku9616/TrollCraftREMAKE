@@ -1,0 +1,15 @@
+package com.goku9616.TrollCraftREMAKE.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
+
+public class TrollDiamondOre extends Block{
+	public TrollDiamondOre(){
+		super(Material.rock);
+		setBlockName("TrollIronOre");
+		setHardness(3F);
+		setHarvestLevel("pickaxe", 1);
+		this.setBlockTextureName("minecraft:iron_ore");
+	}
+}

@@ -1,0 +1,13 @@
+package com.goku9616.TrollCraftREMAKE.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+
+public class TrollIronOre extends Block{
+	public TrollIronOre(){
+		super(Material.rock);
+		setBlockName("TrollIronOre");
+		setBlockUnbreakable();
+		this.setBlockTextureName("minecraft:iron_ore");
+	}
+}

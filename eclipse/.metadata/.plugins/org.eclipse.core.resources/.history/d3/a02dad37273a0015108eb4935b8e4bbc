@@ -1,0 +1,11 @@
+package com.goku9616.TrollCraftREMAKE.combact;
+
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
+
+public class TrollDiamondAxe extends ItemAxe{
+	public TrollDiamondAxe(){
+		setTextureName("minecraft:diamond_axe");
+		setUnlocalizedName("TrollDiamondAxe");
+	}
+}

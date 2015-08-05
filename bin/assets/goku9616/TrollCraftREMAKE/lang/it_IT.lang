@@ -1,0 +1,30 @@
+#Blocks
+tile.TrollStone.name=Roccia
+tile.TrollSand.name=Sabbia
+tile.TrollTnt.name=Tritolo
+tile.TrollIronOre.name=Ferro grezzo
+tile.TrollCoalOre.name=Carbone grezzo
+tile.TrollRedstoneOre.name=Pietrarossa grezza
+tile.TrollLapisOre.name=Lapislazuli grezzo
+tile.TrollGoldOre.name=Oro grezzo
+tile.TrollDiamondOre.name=Diamante grezzo
+tile.TrollDiamondBlock.name= Blocco di diamante
+tile.TrollTorch.name=Torcia
+#Tabs
+itemGroup.TrollCraftREMAKE=TrollCraftREMAKE
+#Items
+item.TrollDiamond.name=Diamante
+item.TrollCoal.name=Carbone
+item.TrollDiamondAxe.name=Acia di diamante
+item.TrollDiamondPickaxe.name=Piccone di diamante
+item.TrollDiamondSword.name=Spada di diamante
+item.TrollDiamondHoe.name=Zappa di diamante
+item.TrollDiamondShovel.name=Pala di diamante
+item.troll_diamond_helmet.name= Elmo di diamante
+item.troll_diamond_chestplate.name=Corazza di diamante
+item.troll_diamond_leggings.name=Gambiera di diamante
+item.troll_diamond_boots.name=Stivali di diamante
+item.TrollSoul.name=Anima del Troll
+item.TrollSeeds.name=Semi di grano
+item.TrollMilkBucket.name=Latte
+

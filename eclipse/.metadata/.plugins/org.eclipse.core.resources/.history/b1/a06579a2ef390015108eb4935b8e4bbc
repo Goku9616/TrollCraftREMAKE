@@ -1,0 +1,22 @@
+package com.goku9616.TrollCraftREMAKE.blocks;
+
+import com.goku9616.TrollCraftREMAKE.TrollCraftREMAKE;
+import com.goku9616.TrollCraftREMAKE.items.TrollCoal;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+
+public class TrollStone extends Block{
+	public TrollStone(){
+		super(Material.rock);
+		setBlockName("TrollStone");
+		setBlockUnbreakable();
+		this.setBlockTextureName("minecraft:stone");
+	}
+	@Override
+	public Item getItemDropped(int p_149650_1_, Random rnd, int p_149650_3_)
+    {
+        return TrollCraftREMAKE.trollCoal;
+    }
+}

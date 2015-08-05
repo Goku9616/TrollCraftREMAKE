@@ -1,0 +1,29 @@
+#Blocks
+tile.TrollStone.name=Stone
+tile.TrollSand.name=Sand
+tile.TrollTnt.name=TNT
+tile.TrollIronOre.name=Iron Ore
+tile.TrollCoalOre.name=Coal Ore
+tile.TrollRedstoneOre.name=Redstone Ore
+tile.TrollLapisOre.name=Lapis Lazuli Ore
+tile.TrollGoldOre.name=Gold Ore
+tile.TrollDiamondOre.name=Diamond Ore
+tile.TrollDiamondBlock.name= Block of Diamond
+tile.TrollTorch.name=Torch
+#Tabs
+itemGroup.TrollCraftREMAKE=TrollCraftREMAKE
+#Items
+item.TrollDiamond.name=Diamond
+item.TrollCoal.name=Coal
+item.TrollDiamondAxe.name=Diamond Axe
+item.TrollDiamondPickaxe.name=Diamond Pickaxe
+item.TrollDiamondSword.name=Diamond Sword
+item.TrollDiamondHoe.name=Diamond Hoe
+item.TrollDiamondShovel.name=Diamond Shovel
+item.troll_diamond_helmet.name=Diamond Helmet
+item.troll_diamond_chestplate.name=Diamond Chestplate
+item.troll_diamond_leggings.name=Diamond Leggings
+item.troll_diamond_boots.name=Diamond Boots
+item.TrollSoul.name=Troll Soul
+item.TrollSeeds.name=Seeds
+item.TrollMilkBucket.name=Milk

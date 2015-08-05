@@ -1,0 +1,157 @@
+package com.goku9616.TrollCraftREMAKE;
+
+import javax.tools.Tool;
+
+import com.goku9616.TrollCraftREMAKE.armor.TrollDiamondArmor;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollCoalOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollDiamondBlock;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollDiamondOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollGoldOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollIronOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollLapisOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollRedstoneOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollSand;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollSoul;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollStone;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollTnt;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollTorch;
+import com.goku9616.TrollCraftREMAKE.combact.TrollDiamondAxe;
+import com.goku9616.TrollCraftREMAKE.combact.TrollDiamondHoe;
+import com.goku9616.TrollCraftREMAKE.combact.TrollDiamondPickaxe;
+import com.goku9616.TrollCraftREMAKE.combact.TrollDiamondShovel;
+import com.goku9616.TrollCraftREMAKE.combact.TrollDiamondSword;
+import com.goku9616.TrollCraftREMAKE.handler.FuelHandler;
+import com.goku9616.TrollCraftREMAKE.items.TrollCoal;
+import com.goku9616.TrollCraftREMAKE.items.TrollDiamond;
+import com.goku9616.TrollCraftREMAKE.items.TrollMilkBucket;
+import com.goku9616.TrollCraftREMAKE.items.TrollSeeds;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+@Mod(modid = TrollCraftREMAKE.MODID, version = TrollCraftREMAKE.VERSION)
+public class TrollCraftREMAKE
+{
+	ItemStack dyes=new ItemStack(Items.dye);
+    public static final String MODID = "TrollCraftREMAKE";
+    public static final String VERSION = "1.0";
+    public static ToolMaterial trollDiamondMaterial=new EnumHelper().addToolMaterial("TrollDiamondMaterial", ToolMaterial.EMERALD.getHarvestLevel(), 1, ToolMaterial.EMERALD.getEfficiencyOnProperMaterial(), ToolMaterial.EMERALD.getDamageVsEntity(), ToolMaterial.EMERALD.getEnchantability());
+    public static ArmorMaterial trollDiamondArmorMaterial=new EnumHelper().addArmorMaterial("TrollDiamondArmorMaterial", 1, new int[]{ArmorMaterial.DIAMOND.getDamageReductionAmount(0), ArmorMaterial.DIAMOND.getDamageReductionAmount(1), ArmorMaterial.DIAMOND.getDamageReductionAmount(2), ArmorMaterial.DIAMOND.getDamageReductionAmount(3)}, ArmorMaterial.DIAMOND.getEnchantability());
+    public static TrollCraftTab trollCraftTab=new TrollCraftTab(CreativeTabs.getNextID(), "TrollCraftREMAKE");
+    public static Block trollStone=new TrollStone().setCreativeTab(trollCraftTab);
+    public static Block trollIronOre=new TrollIronOre().setCreativeTab(trollCraftTab);
+    public static Block trollCoalOre=new TrollCoalOre().setCreativeTab(trollCraftTab); 
+    public static Block trollRedstoneOre=new TrollRedstoneOre().setCreativeTab(trollCraftTab);
+    public static Block trollLapisOre=new TrollLapisOre().setCreativeTab(trollCraftTab); 
+    public static Block trollGoldOre=new TrollGoldOre().setCreativeTab(trollCraftTab);
+    public static Block trollDiamondOre=new TrollDiamondOre().setCreativeTab(trollCraftTab);
+    public static Block trollDiamondBlock=new TrollDiamondBlock().setCreativeTab(trollCraftTab);
+    public static Block trollTorch=new TrollTorch().setCreativeTab(trollCraftTab);
+    public static Block trollSand=new TrollSand().setCreativeTab(trollCraftTab);
+    public static Block trollTnt=new TrollTnt().setCreativeTab(trollCraftTab);
+    public static Item trollCoal=new TrollCoal().setCreativeTab(trollCraftTab);
+    public static Item trollDiamond=new TrollDiamond().setCreativeTab(trollCraftTab);
+    public static Item trollSoul=new TrollSoul().setCreativeTab(trollCraftTab);
+    public static Item trollSeeds=new TrollSeeds().setCreativeTab(trollCraftTab);
+    public static Item trollMilkBucket=new TrollMilkBucket().setCreativeTab(trollCraftTab);
+    public static Item trollDiamondAxe=new TrollDiamondAxe().setCreativeTab(trollCraftTab);
+    public static Item trollDiamondPickaxe=new TrollDiamondPickaxe().setCreativeTab(trollCraftTab);
+    public static Item trollDiamondShovel=new TrollDiamondShovel().setCreativeTab(trollCraftTab);
+    public static Item trollDiamondHoe=new TrollDiamondHoe().setCreativeTab(trollCraftTab);
+    public static Item trollDiamondSword=new TrollDiamondSword().setCreativeTab(trollCraftTab);
+    public static Item trollDiamondHelmet=new TrollDiamondArmor("troll_diamond_helmet", trollDiamondArmorMaterial,0).setCreativeTab(trollCraftTab);
+    public static Item trollDiamondChestplate=new TrollDiamondArmor("troll_diamond_chestplate", trollDiamondArmorMaterial,1).setCreativeTab(trollCraftTab);
+    public static Item trollDiamondLeggings=new TrollDiamondArmor("troll_diamond_leggings", trollDiamondArmorMaterial,2).setCreativeTab(trollCraftTab);
+    public static Item trollDiamondBoots=new TrollDiamondArmor("troll_diamond_boots", trollDiamondArmorMaterial,3).setCreativeTab(trollCraftTab);
+    
+    @EventHandler
+    public void preinit(FMLPreInitializationEvent event)
+    {
+    	GameRegistry.registerBlock(trollStone, "TrollStone");
+    	GameRegistry.registerBlock(trollIronOre, "TrollIronOre");
+    	GameRegistry.registerBlock(trollCoalOre, "TrollCoalOre");
+    	GameRegistry.registerBlock(trollRedstoneOre, "TrollRedstoneOre");
+    	GameRegistry.registerBlock(trollLapisOre, "TrollLapisOre");
+    	GameRegistry.registerBlock(trollDiamondOre, "TrollDiamondOre");
+    	GameRegistry.registerBlock(trollGoldOre, "TrollGoldOre");    	
+    	GameRegistry.registerBlock(trollDiamondBlock, "TrollDiamondBlock");
+    	GameRegistry.registerBlock(trollTorch, "TrollTorch");
+    	GameRegistry.registerBlock(trollSand, "TrollSand");
+    	GameRegistry.registerBlock(trollTnt, "TrollTnt");
+    	GameRegistry.registerItem(trollCoal, "TrollCoal");
+    	GameRegistry.registerItem(trollDiamond, "TrollDiamond");
+    	GameRegistry.registerItem(trollSoul, "TrollSoul");
+    	GameRegistry.registerItem(trollSeeds, "TrollSeeds");
+    	GameRegistry.registerItem(trollMilkBucket, "TrollMilkBucket");
+       	GameRegistry.registerItem(trollDiamondAxe, "TrollDiamondAxe");   	
+       	GameRegistry.registerItem(trollDiamondPickaxe, "TrollDiamondPickaxe");
+       	GameRegistry.registerItem(trollDiamondSword, "TrollDiamondSword");
+       	GameRegistry.registerItem(trollDiamondShovel, "TrollDiamondShovel");
+       	GameRegistry.registerItem(trollDiamondHoe, "TrollDiamondHoe");
+       	GameRegistry.registerItem(trollDiamondHelmet, "TrollDiamondHelmet");
+       	GameRegistry.registerItem(trollDiamondChestplate, "TrollDiamondChestplate");
+       	GameRegistry.registerItem(trollDiamondLeggings, "TrollDiamondLeggings");
+       	GameRegistry.registerItem(trollDiamondBoots, "TrollDiamondBoots");
+       	
+       	GameRegistry.addShapelessRecipe(new ItemStack(trollStone),Blocks.stone, trollSoul);
+       	dyes.setItemDamage(7);
+    	GameRegistry.addShapelessRecipe(new ItemStack(trollIronOre),Blocks.stone, trollSoul, dyes);
+    	dyes.setItemDamage(0);
+    	GameRegistry.addShapelessRecipe(new ItemStack(trollCoalOre),Blocks.stone, trollSoul, dyes);
+    	dyes.setItemDamage(1);
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollRedstoneOre), "aba"," c "," d ", 'a', Item.getItemById(38),'b', dyes, 'c', Blocks.stone, 'd', trollSoul ));
+    	dyes.setItemDamage(11);
+    	GameRegistry.addShapelessRecipe(new ItemStack(trollGoldOre),Blocks.stone, trollSoul, dyes);
+    	dyes.setItemDamage(12);
+    	GameRegistry.addShapelessRecipe(new ItemStack(trollDiamondOre),Blocks.stone, trollSoul, dyes);
+    	dyes.setItemDamage(4);
+    	GameRegistry.addShapelessRecipe(new ItemStack(trollLapisOre, 5),Blocks.stone, trollSoul, dyes);
+       	GameRegistry.addShapelessRecipe(new ItemStack(trollSand),Blocks.sand, trollSoul);
+       	GameRegistry.addShapelessRecipe(new ItemStack(trollTnt),Blocks.tnt, trollSoul);
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondBlock), "aaa","aaa","aaa",'a', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollTorch), "   "," a "," b ",'a', trollCoal, 'b', Items.stick));
+       	ItemStack white=new ItemStack(Items.dye);
+       	white.setItemDamage(15);
+       	dyes.setItemDamage(0);
+       	GameRegistry.addShapelessRecipe(new ItemStack(trollSoul, 4),Blocks.soul_sand, dyes, white);
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollSeeds), " a ","bcb","bbb", 'a', Items.rotten_flesh,'b', Item.getItemById(295), 'c', trollSoul));
+       	GameRegistry.addShapelessRecipe(new ItemStack(trollMilkBucket),trollSoul, Items.water_bucket, white);
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondAxe), " a ","ba ","bb ", 'a', Items.stick,'b', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondPickaxe), " a "," a ","bbb", 'a', Items.stick,'b', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondSword), " a "," b "," b ", 'a', Items.stick,'b', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondShovel), " a "," a "," b ", 'a', Items.stick,'b', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondHoe), " a "," a "," b ", 'a', Items.stick,'b', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondHelmet), "aaa","a a","   ", 'a', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondChestplate), "a a","aaa","aaa", 'a', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondLeggings), "aaa","a a","a a", 'a', trollDiamond));
+    	GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trollDiamondBoots), "a a","a a","   ", 'a', trollDiamond));
+
+    	GameRegistry.addSmelting(trollIronOre, new ItemStack(Blocks.dirt, 1), 0F);
+    	GameRegistry.addSmelting(trollGoldOre, new ItemStack(Blocks.sand, 1), 0F);
+    }
+    
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+        GameRegistry.registerFuelHandler(new FuelHandler());
+    }
+    
+    @EventHandler
+    public void postinit(FMLPostInitializationEvent event)
+    {
+    }
+}

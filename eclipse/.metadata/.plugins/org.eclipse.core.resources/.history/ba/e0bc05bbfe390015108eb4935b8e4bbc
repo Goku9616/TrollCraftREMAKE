@@ -1,0 +1,29 @@
+package com.goku9616.TrollCraftREMAKE.blocks;
+
+import java.util.ArrayList;
+
+import com.goku9616.TrollCraftREMAKE.TrollCraftREMAKE;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+public class TrollDiamondBlock extends Block{
+	public TrollDiamondBlock(){
+		super(Material.rock);
+		setBlockName("TrollDiamondBlock");
+		setHardness(3F);
+		setHarvestLevel("pickaxe", 2);
+		this.setBlockTextureName("minecraft:diamond_block");
+	}
+	@Override
+	public ArrayList<ItemStack> getDrops(World world, int x, int y, int z,
+			int metadata, int fortune) {
+		ArrayList<ItemStack> i=new ArrayList<ItemStack>();
+		i.add(new ItemStack(TrollCraftREMAKE.trollDiamondBlock, 9));
+		return i;
+	}
+}

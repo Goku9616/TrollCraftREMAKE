@@ -1,0 +1,16 @@
+package com.goku9616.TrollCraftREMAKE;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+
+public class TrollCraftTab extends CreativeTabs{
+	 public TrollCraftTab(int pos, String name) {
+		  super(pos, name);
+		}
+
+	@Override
+	public Item getTabIconItem() {
+		return TrollCraftREMAKE.trollCoal;
+	}
+}

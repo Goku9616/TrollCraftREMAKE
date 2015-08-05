@@ -1,0 +1,26 @@
+package com.goku9616.TrollCraftREMAKE.combact;
+
+import com.goku9616.TrollCraftREMAKE.TrollCraftREMAKE;
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+public class TrollDiamondAxe extends ItemAxe{
+	public TrollDiamondAxe(){
+		super(TrollCraftREMAKE.trollDiamondMaterial);
+		setTextureName("minecraft:diamond_axe");
+		setUnlocalizedName("TrollDiamondAxe");
+	}
+	@Override
+	public boolean onBlockDestroyed(ItemStack p_150894_1_, World p_150894_2_,
+			Block p_150894_3_, int p_150894_4_, int p_150894_5_,
+			int p_150894_6_, EntityLivingBase p_150894_7_) {
+		this.setDamage(p_150894_1_, -1);
+		return super.onBlockDestroyed(p_150894_1_, p_150894_2_, p_150894_3_,
+				p_150894_4_, p_150894_5_, p_150894_6_, p_150894_7_);
+	}
+}

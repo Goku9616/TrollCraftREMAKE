@@ -1,0 +1,93 @@
+package com.goku9616.TrollCraftREMAKE;
+
+import javax.tools.Tool;
+
+import com.goku9616.TrollCraftREMAKE.blocks.TrollCoalOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollDiamondBlock;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollDiamondOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollGoldOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollIronOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollLapisOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollRedstoneOre;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollSand;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollSoul;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollStone;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollTnt;
+import com.goku9616.TrollCraftREMAKE.blocks.TrollTorch;
+import com.goku9616.TrollCraftREMAKE.handler.FuelHandler;
+import com.goku9616.TrollCraftREMAKE.items.TrollCoal;
+import com.goku9616.TrollCraftREMAKE.items.TrollDiamond;
+import com.goku9616.TrollCraftREMAKE.items.TrollMilkBucket;
+import com.goku9616.TrollCraftREMAKE.items.TrollSeeds;
+
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.EnumHelper;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+@Mod(modid = TrollCraftREMAKE.MODID, version = TrollCraftREMAKE.VERSION)
+public class TrollCraftREMAKE
+{
+    public static final String MODID = "TrollCraftREMAKE";
+    public static final String VERSION = "1.0";
+    public static ToolMaterial trollDiamondMaterial=new EnumHelper().addToolMaterial("TrollDiamondMaterial", ToolMaterial.EMERALD.getHarvestLevel(), 1, ToolMaterial.EMERALD.getEfficiencyOnProperMaterial(), ToolMaterial.EMERALD.getDamageVsEntity(), ToolMaterial.EMERALD.getEnchantability());
+    public static TrollCraftTab trollCraftTab=new TrollCraftTab(CreativeTabs.getNextID(), "TrollCraftREMAKE");
+    public static Block trollStone=new TrollStone().setCreativeTab(trollCraftTab);
+    public static Block trollIronOre=new TrollIronOre().setCreativeTab(trollCraftTab);
+    public static Block trollCoalOre=new TrollCoalOre().setCreativeTab(trollCraftTab); 
+    public static Block trollRedstoneOre=new TrollRedstoneOre().setCreativeTab(trollCraftTab);
+    public static Block trollLapisOre=new TrollLapisOre().setCreativeTab(trollCraftTab); 
+    public static Block trollGoldOre=new TrollGoldOre().setCreativeTab(trollCraftTab);
+    public static Block trollDiamondOre=new TrollDiamondOre().setCreativeTab(trollCraftTab);
+    public static Block trollDiamondBlock=new TrollDiamondBlock().setCreativeTab(trollCraftTab);
+    public static Block trollTorch=new TrollTorch().setCreativeTab(trollCraftTab);
+    public static Block trollSand=new TrollSand().setCreativeTab(trollCraftTab);
+    public static Block trollTnt=new TrollTnt().setCreativeTab(trollCraftTab);
+    public static Item trollCoal=new TrollCoal().setCreativeTab(trollCraftTab);
+    public static Item trollDiamond=new TrollDiamond().setCreativeTab(trollCraftTab);
+    public static Item trollSoul=new TrollSoul().setCreativeTab(trollCraftTab);
+    public static Item trollSeeds=new TrollSeeds().setCreativeTab(trollCraftTab);
+    public static Item trollMilkBucket=new TrollMilkBucket().setCreativeTab(trollCraftTab);
+
+    @EventHandler
+    public void preinit(FMLPreInitializationEvent event)
+    {
+    	GameRegistry.registerBlock(trollStone, "TrollStone");
+    	GameRegistry.registerBlock(trollIronOre, "TrollIronOre");
+    	GameRegistry.registerBlock(trollCoalOre, "TrollCoalOre");
+    	GameRegistry.registerBlock(trollRedstoneOre, "TrollRedstoneOre");
+    	GameRegistry.registerBlock(trollLapisOre, "TrollLapisOre");
+    	GameRegistry.registerBlock(trollDiamondOre, "TrollDiamondOre");
+    	GameRegistry.registerBlock(trollGoldOre, "TrollGoldOre");    	
+    	GameRegistry.registerBlock(trollDiamondBlock, "TrollDiamondBlock");
+    	GameRegistry.registerBlock(trollTorch, "TrollTorch");
+    	GameRegistry.registerBlock(trollSand, "TrollSand");
+    	GameRegistry.registerBlock(trollTnt, "TrollTnt");
+    	GameRegistry.registerItem(trollCoal, "TrollCoal");
+    	GameRegistry.registerItem(trollDiamond, "TrollDiamond");
+    	GameRegistry.registerItem(trollSoul, "TrollSoul");
+    	GameRegistry.registerItem(trollSeeds, "TrollSeeds");
+    	GameRegistry.registerItem(trollMilkBucket, "TrollMilkBucket");
+    	GameRegistry.addSmelting(trollIronOre, new ItemStack(Blocks.dirt, 1), 0F);
+    }
+    
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+        GameRegistry.registerFuelHandler(new FuelHandler());
+    }
+    
+    @EventHandler
+    public void postinit(FMLPostInitializationEvent event)
+    {
+    }
+}

@@ -1,0 +1,9 @@
+package com.goku9616.TrollCraftREMAKE.items;
+
+import net.minecraft.item.Item;
+
+public class TrollCoal extends Item{
+	public TrollCoal(){
+		setTextureName("minecraft:coal");
+	}
+}

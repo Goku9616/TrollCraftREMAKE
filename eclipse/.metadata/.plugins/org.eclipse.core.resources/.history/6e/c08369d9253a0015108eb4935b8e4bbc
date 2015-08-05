@@ -1,0 +1,9 @@
+package com.goku9616.TrollCraftREMAKE.combact;
+
+public class Snippet {
+	public static void main(String[] args) {
+		
+		GameRegistry.registerItem(trollSeeds, "TrollSeeds");
+	}
+}
+

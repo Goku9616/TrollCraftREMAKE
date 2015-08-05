@@ -1,0 +1,10 @@
+package com.goku9616.TrollCraftREMAKE.items;
+
+import net.minecraft.item.Item;
+
+public class TrollMilkBucket extends Item{
+	public TrollMilkBucket(){
+		setTextureName("minecraft:milk_bucket");
+		setUnlocalizedName("TrollMilkBucket");
+	}
+}
